@@ -1,6 +1,14 @@
 class SpentsController < ApplicationController
   def index
-    spents = Spent.all
+    spents = Spent.all.map do |spent|
+      {
+          name: spent.name,
+          created_at: spent.created_at,
+          category: spent.category.name,
+          wallet: spent.wallet.name,
+          id: spent.id
+      }
+    end
 
     render status: :ok, json: spents
   end
