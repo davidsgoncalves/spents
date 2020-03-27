@@ -1,6 +1,6 @@
 class WalletsController < ApplicationController
   def index
-    wallets = Wallet.all
+    wallets = Wallet.all.order(:id)
 
     render status: :ok, json: wallets
   end
