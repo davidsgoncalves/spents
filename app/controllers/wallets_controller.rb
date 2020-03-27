@@ -5,6 +5,13 @@ class WalletsController < ApplicationController
     render status: :ok, json: wallets
   end
 
+
+  def show
+    wallet = Wallet.find(params[:id])
+
+    render status: :ok, json: wallet
+  end
+
   def create
     wallet = Wallet.new wallet_params
 
