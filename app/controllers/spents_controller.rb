@@ -33,7 +33,7 @@ class SpentsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     spent = Spent.find params[:id]
 
     if spent.delete
